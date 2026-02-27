@@ -11,7 +11,7 @@
 
  function save(){
     /*get references*/
-    const key=document.getElementById("key");
+    const key=document.getElementById("k");
     const val=document.getElementById("val");
     const  savebtn=document.getElementById("savebtn");
     const  result=document.getElementById("result");
@@ -115,7 +115,10 @@
     });
 
     clearbtn.addEventListener('click',()=>{ 
+      if(key.value!='')
       result.remove();
+    else
+    alert('Not Ant Data Exist To Clear!')
       
     });
 
@@ -162,7 +165,7 @@ color: aliceblue;
 #span1,#span2{
 color:greenyellow;
 }
-#key,#val{
+#k,#val{
 padding: 7px 28px;
 border-radius: 4px;
 border: 1px solid greenyellow;
@@ -201,7 +204,7 @@ border: 2px solid blue;
 
 <div id="sub-container">
 <h1><span id="span1">.....</span>CRUD OPERATION<span id="span2">.....</span></h1>
-<input type="text" id="key" name="key" placeholder="Enter Key....."/><br><br>
+<input type="text" id="k" name="k" placeholder="Enter Key....."/><br><br>
 <input type="text" id="val" name="val" placeholder="Enter Value....."/><br><br>
 <div id="button">
 <button onclick="save()" id="savebtn" name="savebtn">SAVE</button>
